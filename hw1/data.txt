@@ -1,0 +1,199 @@
+------------degree_centrality---------------
+Georgios Stoupas 	:  0.0625
+Antonis Sidiropoulos 	:  0.125
+Dimitrios Katsaros 	:  1.0
+Yannis Manolopoulos 	:  0.375
+Dimitrios Papakostas 	:  0.078125
+Leandros Tassiulas 	:  0.3125
+Soheil Eshghi 	:  0.046875
+Pavlos Basaras 	:  0.1875
+George Iosifidis 	:  0.046875
+George Stavropoulos 	:  0.03125
+Payam M. Barnaghi 	:  0.09375
+Georg Gottlob 	:  0.09375
+Rahul Pandey 	:  0.078125
+Theodoros Tzouramanis 	:  0.078125
+Athena Vakali 	:  0.1875
+Marios Bakratsas 	:  0.046875
+Leandros A. Maglaras 	:  0.125
+Lei Shu 	:  0.09375
+Athanasios Maglaras 	:  0.09375
+Jianmin Jiang 	:  0.09375
+Helge Janicke 	:  0.109375
+Tiago J. Cruz 	:  0.09375
+Antonia Gogoglou 	:  0.0625
+Georgios Sideris 	:  0.046875
+Ioannis Zozas 	:  0.078125
+Stamatia Bibi 	:  0.078125
+Panagiotis Bozanis 	:  0.109375
+Ioannis Stamelos 	:  0.09375
+Ioannis-Prodromos Belikaidis 	:  0.046875
+Alexandra I. Cristea 	:  0.03125
+Alexandra Stagkopoulou 	:  0.03125
+Muhammad Umer Khan 	:  0.0625
+Lars Schmidt-Thieme 	:  0.0625
+Alexandros Nanopoulos 	:  0.15625
+Katerina Pechlivanidou 	:  0.078125
+Kostas Katsalis 	:  0.078125
+Ioannis Igoumenos 	:  0.078125
+Thanasis Korakis 	:  0.125
+Nikos Makris 	:  0.046875
+Nikos Dimokas 	:  0.046875
+Alfredo Cuzzocrea 	:  0.046875
+Alexis Papadimitriou 	:  0.046875
+Leonidas Akritidis 	:  0.03125
+Donatos Stavropoulos 	:  0.0625
+Giannis Kazdaridis 	:  0.0625
+Vasilis Sourlas 	:  0.0625
+Paris Flegkas 	:  0.0625
+Georgios S. Paschos 	:  0.0625
+Bhaskar Prasad Rimal 	:  0.046875
+Admela Jukan 	:  0.046875
+Yves Goeleven 	:  0.046875
+George Pallis 	:  0.15625
+S. Sivasubramanian 	:  0.046875
+Andreas Papadopoulos 	:  0.015625
+Konstantinos Stamos 	:  0.078125
+Marios D. Dikaiakos 	:  0.09375
+Pankaj Mehra 	:  0.0625
+Nicholas Loulloudes 	:  0.09375
+Ioannis Karydis 	:  0.0625
+Apostolos N. Papadopoulos 	:  0.0625
+Maria Kontaki 	:  0.03125
+Fotis Tsakiridis 	:  0.03125
+Gökhan Yavas 	:  0.078125
+Özgür Ulusoy 	:  0.078125
+Murat Karakaya 	:  0.078125
+------------closeness_centrality---------------
+Georgios Stoupas 	:  0.5161290322580645
+Antonis Sidiropoulos 	:  0.5333333333333333
+Dimitrios Katsaros 	:  1.0
+Yannis Manolopoulos 	:  0.6153846153846154
+Dimitrios Papakostas 	:  0.5203252032520326
+Leandros Tassiulas 	:  0.5925925925925926
+Soheil Eshghi 	:  0.512
+Pavlos Basaras 	:  0.5517241379310345
+George Iosifidis 	:  0.512
+George Stavropoulos 	:  0.5079365079365079
+Payam M. Barnaghi 	:  0.5245901639344263
+Georg Gottlob 	:  0.5245901639344263
+Rahul Pandey 	:  0.5203252032520326
+Theodoros Tzouramanis 	:  0.5203252032520326
+Athena Vakali 	:  0.5517241379310345
+Marios Bakratsas 	:  0.512
+Leandros A. Maglaras 	:  0.5333333333333333
+Lei Shu 	:  0.5245901639344263
+Athanasios Maglaras 	:  0.5245901639344263
+Jianmin Jiang 	:  0.5245901639344263
+Helge Janicke 	:  0.5289256198347108
+Tiago J. Cruz 	:  0.5245901639344263
+Antonia Gogoglou 	:  0.5161290322580645
+Georgios Sideris 	:  0.512
+Ioannis Zozas 	:  0.5203252032520326
+Stamatia Bibi 	:  0.5203252032520326
+Panagiotis Bozanis 	:  0.5289256198347108
+Ioannis Stamelos 	:  0.5161290322580645
+Ioannis-Prodromos Belikaidis 	:  0.512
+Alexandra I. Cristea 	:  0.5079365079365079
+Alexandra Stagkopoulou 	:  0.5079365079365079
+Muhammad Umer Khan 	:  0.5161290322580645
+Lars Schmidt-Thieme 	:  0.5161290322580645
+Alexandros Nanopoulos 	:  0.5423728813559322
+Katerina Pechlivanidou 	:  0.5203252032520326
+Kostas Katsalis 	:  0.5203252032520326
+Ioannis Igoumenos 	:  0.5203252032520326
+Thanasis Korakis 	:  0.5333333333333333
+Nikos Makris 	:  0.512
+Nikos Dimokas 	:  0.512
+Alfredo Cuzzocrea 	:  0.512
+Alexis Papadimitriou 	:  0.512
+Leonidas Akritidis 	:  0.5079365079365079
+Donatos Stavropoulos 	:  0.5161290322580645
+Giannis Kazdaridis 	:  0.5161290322580645
+Vasilis Sourlas 	:  0.5161290322580645
+Paris Flegkas 	:  0.5161290322580645
+Georgios S. Paschos 	:  0.5161290322580645
+Bhaskar Prasad Rimal 	:  0.512
+Admela Jukan 	:  0.512
+Yves Goeleven 	:  0.512
+George Pallis 	:  0.5423728813559322
+S. Sivasubramanian 	:  0.512
+Andreas Papadopoulos 	:  0.5039370078740157
+Konstantinos Stamos 	:  0.5203252032520326
+Marios D. Dikaiakos 	:  0.5245901639344263
+Pankaj Mehra 	:  0.5161290322580645
+Nicholas Loulloudes 	:  0.5161290322580645
+Ioannis Karydis 	:  0.5161290322580645
+Apostolos N. Papadopoulos 	:  0.5161290322580645
+Maria Kontaki 	:  0.5079365079365079
+Fotis Tsakiridis 	:  0.5079365079365079
+Gökhan Yavas 	:  0.5203252032520326
+Özgür Ulusoy 	:  0.5203252032520326
+Murat Karakaya 	:  0.5203252032520326
+-------------betweenness_centrality------------
+Georgios Stoupas 	:  0.0
+Antonis Sidiropoulos 	:  0.0018187830687830685
+Dimitrios Katsaros 	:  0.802455357142857
+Yannis Manolopoulos 	:  0.05431547619047617
+Dimitrios Papakostas 	:  0.0009093915343915343
+Leandros Tassiulas 	:  0.0361276455026455
+Soheil Eshghi 	:  0.0
+Pavlos Basaras 	:  0.0113260582010582
+George Iosifidis 	:  0.0
+George Stavropoulos 	:  0.0
+Payam M. Barnaghi 	:  0.000248015873015873
+Georg Gottlob 	:  0.000248015873015873
+Rahul Pandey 	:  0.0
+Theodoros Tzouramanis 	:  0.0
+Athena Vakali 	:  0.007523148148148149
+Marios Bakratsas 	:  0.0
+Leandros A. Maglaras 	:  0.0018187830687830685
+Lei Shu 	:  0.0
+Athanasios Maglaras 	:  0.0
+Jianmin Jiang 	:  0.0
+Helge Janicke 	:  0.0006613756613756613
+Tiago J. Cruz 	:  0.0
+Antonia Gogoglou 	:  0.0
+Georgios Sideris 	:  0.0
+Ioannis Zozas 	:  0.0001240079365079365
+Stamatia Bibi 	:  0.0001240079365079365
+Panagiotis Bozanis 	:  0.0023561507936507935
+Ioannis Stamelos 	:  0.0
+Ioannis-Prodromos Belikaidis 	:  0.0
+Alexandra I. Cristea 	:  0.0
+Alexandra Stagkopoulou 	:  0.0
+Muhammad Umer Khan 	:  0.0
+Lars Schmidt-Thieme 	:  0.0
+Alexandros Nanopoulos 	:  0.005456349206349207
+Katerina Pechlivanidou 	:  0.0
+Kostas Katsalis 	:  0.0
+Ioannis Igoumenos 	:  0.0
+Thanasis Korakis 	:  0.0018187830687830685
+Nikos Makris 	:  0.0
+Nikos Dimokas 	:  0.00016534391534391533
+Alfredo Cuzzocrea 	:  0.0
+Alexis Papadimitriou 	:  0.0
+Leonidas Akritidis 	:  0.0
+Donatos Stavropoulos 	:  0.0
+Giannis Kazdaridis 	:  0.0
+Vasilis Sourlas 	:  0.0
+Paris Flegkas 	:  0.0
+Georgios S. Paschos 	:  0.0
+Bhaskar Prasad Rimal 	:  0.0
+Admela Jukan 	:  0.0
+Yves Goeleven 	:  0.0
+George Pallis 	:  0.004381613756613756
+S. Sivasubramanian 	:  0.0
+Andreas Papadopoulos 	:  0.0
+Konstantinos Stamos 	:  0.0
+Marios D. Dikaiakos 	:  0.0006613756613756613
+Pankaj Mehra 	:  0.0
+Nicholas Loulloudes 	:  0.0
+Ioannis Karydis 	:  0.0
+Apostolos N. Papadopoulos 	:  0.0
+Maria Kontaki 	:  0.0
+Fotis Tsakiridis 	:  0.0
+Gökhan Yavas 	:  0.0
+Özgür Ulusoy 	:  0.0
+Murat Karakaya 	:  0.0
+

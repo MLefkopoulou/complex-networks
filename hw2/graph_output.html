@@ -1,0 +1,136 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Georgios Stoupas", "label": "Georgios Stoupas", "shape": "dot"}, {"id": "Antonis Sidiropoulos", "label": "Antonis Sidiropoulos", "shape": "dot"}, {"id": "Dimitrios Katsaros", "label": "Dimitrios Katsaros", "shape": "dot"}, {"id": "Yannis Manolopoulos", "label": "Yannis Manolopoulos", "shape": "dot"}, {"id": "Dimitrios Papakostas", "label": "Dimitrios Papakostas", "shape": "dot"}, {"id": "Soheil Eshghi", "label": "Soheil Eshghi", "shape": "dot"}, {"id": "Leandros Tassiulas", "label": "Leandros Tassiulas", "shape": "dot"}, {"id": "Pavlos Basaras", "label": "Pavlos Basaras", "shape": "dot"}, {"id": "George Iosifidis", "label": "George Iosifidis", "shape": "dot"}, {"id": "George Stavropoulos", "label": "George Stavropoulos", "shape": "dot"}, {"id": "Marios Bakratsas", "label": "Marios Bakratsas", "shape": "dot"}, {"id": "Leandros A. Maglaras", "label": "Leandros A. Maglaras", "shape": "dot"}, {"id": "Lei Shu", "label": "Lei Shu", "shape": "dot"}, {"id": "Athanasios Maglaras", "label": "Athanasios Maglaras", "shape": "dot"}, {"id": "Jianmin Jiang", "label": "Jianmin Jiang", "shape": "dot"}, {"id": "Helge Janicke", "label": "Helge Janicke", "shape": "dot"}, {"id": "Tiago J. Cruz", "label": "Tiago J. Cruz", "shape": "dot"}, {"id": "Antonia Gogoglou", "label": "Antonia Gogoglou", "shape": "dot"}, {"id": "Georgios Sideris", "label": "Georgios Sideris", "shape": "dot"}, {"id": "Ioannis Zozas", "label": "Ioannis Zozas", "shape": "dot"}, {"id": "Stamatia Bibi", "label": "Stamatia Bibi", "shape": "dot"}, {"id": "Panagiotis Bozanis", "label": "Panagiotis Bozanis", "shape": "dot"}, {"id": "Ioannis Stamelos", "label": "Ioannis Stamelos", "shape": "dot"}, {"id": "Ioannis{-}Prodromos Belikaidis", "label": "Ioannis{-}Prodromos Belikaidis", "shape": "dot"}, {"id": "Alexandra I. Cristea", "label": "Alexandra I. Cristea", "shape": "dot"}, {"id": "Alexandra Stagkopoulou", "label": "Alexandra Stagkopoulou", "shape": "dot"}, {"id": "Muhammad Umer Khan", "label": "Muhammad Umer Khan", "shape": "dot"}, {"id": "Lars Schmidt{-}Thieme", "label": "Lars Schmidt{-}Thieme", "shape": "dot"}, {"id": "Alexandros Nanopoulos", "label": "Alexandros Nanopoulos", "shape": "dot"}, {"id": "Katerina Pechlivanidou", "label": "Katerina Pechlivanidou", "shape": "dot"}, {"id": "Kostas Katsalis", "label": "Kostas Katsalis", "shape": "dot"}, {"id": "Ioannis Igoumenos", "label": "Ioannis Igoumenos", "shape": "dot"}, {"id": "Thanasis Korakis", "label": "Thanasis Korakis", "shape": "dot"}, {"id": "Nikos Makris", "label": "Nikos Makris", "shape": "dot"}, {"id": "Nikos Dimokas", "label": "Nikos Dimokas", "shape": "dot"}, {"id": "Alfredo Cuzzocrea", "label": "Alfredo Cuzzocrea", "shape": "dot"}, {"id": "Alexis Papadimitriou", "label": "Alexis Papadimitriou", "shape": "dot"}, {"id": "Leonidas Akritidis", "label": "Leonidas Akritidis", "shape": "dot"}, {"id": "Panayiotis Bozanis", "label": "Panayiotis Bozanis", "shape": "dot"}, {"id": "Donatos Stavropoulos", "label": "Donatos Stavropoulos", "shape": "dot"}, {"id": "Giannis Kazdaridis", "label": "Giannis Kazdaridis", "shape": "dot"}, {"id": "Vasilis Sourlas", "label": "Vasilis Sourlas", "shape": "dot"}, {"id": "Paris Flegkas", "label": "Paris Flegkas", "shape": "dot"}, {"id": "Georgios S. Paschos", "label": "Georgios S. Paschos", "shape": "dot"}, {"id": "Bhaskar Prasad Rimal", "label": "Bhaskar Prasad Rimal", "shape": "dot"}, {"id": "Admela Jukan", "label": "Admela Jukan", "shape": "dot"}, {"id": "Yves Goeleven", "label": "Yves Goeleven", "shape": "dot"}, {"id": "George Pallis", "label": "George Pallis", "shape": "dot"}, {"id": "S. Sivasubramanian", "label": "S. Sivasubramanian", "shape": "dot"}, {"id": "Athena Vakali", "label": "Athena Vakali", "shape": "dot"}, {"id": "Andreas Papadopoulos", "label": "Andreas Papadopoulos", "shape": "dot"}, {"id": "Konstantinos Stamos", "label": "Konstantinos Stamos", "shape": "dot"}, {"id": "Marios D. Dikaiakos", "label": "Marios D. Dikaiakos", "shape": "dot"}, {"id": "Pankaj Mehra", "label": "Pankaj Mehra", "shape": "dot"}, {"id": "Nicholas Loulloudes", "label": "Nicholas Loulloudes", "shape": "dot"}, {"id": "Ioannis Karydis", "label": "Ioannis Karydis", "shape": "dot"}, {"id": "Apostolos N. Papadopoulos", "label": "Apostolos N. Papadopoulos", "shape": "dot"}, {"id": "Maria Kontaki", "label": "Maria Kontaki", "shape": "dot"}, {"id": "Fotis Tsakiridis", "label": "Fotis Tsakiridis", "shape": "dot"}, {"id": "G{\\\"{o}}khan Yavas", "label": "G{\\\"{o}}khan Yavas", "shape": "dot"}, {"id": "{\\\"{O}}zg{\\\"{u}}r Ulusoy", "label": "{\\\"{O}}zg{\\\"{u}}r Ulusoy", "shape": "dot"}, {"id": "Murat Karakaya", "label": "Murat Karakaya", "shape": "dot"}]);
+        edges = new vis.DataSet([{"arrowStrikethrough": false, "from": "Georgios Stoupas", "to": "Antonis Sidiropoulos"}, {"arrowStrikethrough": false, "from": "Georgios Stoupas", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Georgios Stoupas", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Georgios Stoupas", "to": "Antonia Gogoglou"}, {"arrowStrikethrough": false, "from": "Antonis Sidiropoulos", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Antonis Sidiropoulos", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Antonis Sidiropoulos", "to": "Antonia Gogoglou"}, {"arrowStrikethrough": false, "from": "Antonis Sidiropoulos", "to": "George Pallis"}, {"arrowStrikethrough": false, "from": "Antonis Sidiropoulos", "to": "Konstantinos Stamos"}, {"arrowStrikethrough": false, "from": "Antonis Sidiropoulos", "to": "Athena Vakali"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "George Stavropoulos"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Dimitrios Papakostas"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Tiago J. Cruz"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Panagiotis Bozanis"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Ioannis Stamelos"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Helge Janicke"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Thanasis Korakis"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Panayiotis Bozanis"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Yves Goeleven"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "George Pallis"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "S. Sivasubramanian"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Athena Vakali"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Nikos Dimokas"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Alexis Papadimitriou"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Pankaj Mehra"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Leonidas Akritidis"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Konstantinos Stamos"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Marios D. Dikaiakos"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Nicholas Loulloudes"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "{\\\"{O}}zg{\\\"{u}}r Ulusoy"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Alexandros Nanopoulos"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "Murat Karakaya"}, {"arrowStrikethrough": false, "from": "Dimitrios Katsaros", "to": "G{\\\"{o}}khan Yavas"}, {"arrowStrikethrough": false, "from": "Yannis Manolopoulos", "to": "Alexis Papadimitriou"}, {"arrowStrikethrough": false, "from": "Dimitrios Papakostas", "to": "Soheil Eshghi"}, {"arrowStrikethrough": false, "from": "Dimitrios Papakostas", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Dimitrios Papakostas", "to": "Pavlos Basaras"}, {"arrowStrikethrough": false, "from": "Soheil Eshghi", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Soheil Eshghi", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Leandros Tassiulas", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "George Iosifidis"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "Ioannis{-}Prodromos Belikaidis"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "Leandros A. Maglaras"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "Helge Janicke"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "Lars Schmidt{-}Thieme"}, {"arrowStrikethrough": false, "from": "Pavlos Basaras", "to": "Alexandros Nanopoulos"}, {"arrowStrikethrough": false, "from": "George Iosifidis", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "George Iosifidis", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "George Stavropoulos", "to": "Dimitrios Papakostas"}, {"arrowStrikethrough": false, "from": "Marios Bakratsas", "to": "Pavlos Basaras"}, {"arrowStrikethrough": false, "from": "Marios Bakratsas", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Marios Bakratsas", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Leandros A. Maglaras", "to": "Lei Shu"}, {"arrowStrikethrough": false, "from": "Leandros A. Maglaras", "to": "Athanasios Maglaras"}, {"arrowStrikethrough": false, "from": "Leandros A. Maglaras", "to": "Jianmin Jiang"}, {"arrowStrikethrough": false, "from": "Leandros A. Maglaras", "to": "Helge Janicke"}, {"arrowStrikethrough": false, "from": "Leandros A. Maglaras", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Leandros A. Maglaras", "to": "Tiago J. Cruz"}, {"arrowStrikethrough": false, "from": "Lei Shu", "to": "Athanasios Maglaras"}, {"arrowStrikethrough": false, "from": "Lei Shu", "to": "Jianmin Jiang"}, {"arrowStrikethrough": false, "from": "Lei Shu", "to": "Helge Janicke"}, {"arrowStrikethrough": false, "from": "Lei Shu", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Lei Shu", "to": "Tiago J. Cruz"}, {"arrowStrikethrough": false, "from": "Athanasios Maglaras", "to": "Jianmin Jiang"}, {"arrowStrikethrough": false, "from": "Athanasios Maglaras", "to": "Helge Janicke"}, {"arrowStrikethrough": false, "from": "Athanasios Maglaras", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Athanasios Maglaras", "to": "Tiago J. Cruz"}, {"arrowStrikethrough": false, "from": "Jianmin Jiang", "to": "Helge Janicke"}, {"arrowStrikethrough": false, "from": "Jianmin Jiang", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Jianmin Jiang", "to": "Tiago J. Cruz"}, {"arrowStrikethrough": false, "from": "Helge Janicke", "to": "Tiago J. Cruz"}, {"arrowStrikethrough": false, "from": "Antonia Gogoglou", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Antonia Gogoglou", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Georgios Sideris", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Georgios Sideris", "to": "Antonis Sidiropoulos"}, {"arrowStrikethrough": false, "from": "Georgios Sideris", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Ioannis Zozas", "to": "Stamatia Bibi"}, {"arrowStrikethrough": false, "from": "Ioannis Zozas", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Ioannis Zozas", "to": "Panagiotis Bozanis"}, {"arrowStrikethrough": false, "from": "Ioannis Zozas", "to": "Ioannis Stamelos"}, {"arrowStrikethrough": false, "from": "Stamatia Bibi", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Stamatia Bibi", "to": "Panagiotis Bozanis"}, {"arrowStrikethrough": false, "from": "Stamatia Bibi", "to": "Ioannis Stamelos"}, {"arrowStrikethrough": false, "from": "Stamatia Bibi", "to": "Panayiotis Bozanis"}, {"arrowStrikethrough": false, "from": "Panagiotis Bozanis", "to": "Ioannis Stamelos"}, {"arrowStrikethrough": false, "from": "Ioannis{-}Prodromos Belikaidis", "to": "Leandros A. Maglaras"}, {"arrowStrikethrough": false, "from": "Ioannis{-}Prodromos Belikaidis", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Alexandra I. Cristea", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Alexandra I. Cristea", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Alexandra Stagkopoulou", "to": "Pavlos Basaras"}, {"arrowStrikethrough": false, "from": "Alexandra Stagkopoulou", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Muhammad Umer Khan", "to": "Pavlos Basaras"}, {"arrowStrikethrough": false, "from": "Muhammad Umer Khan", "to": "Lars Schmidt{-}Thieme"}, {"arrowStrikethrough": false, "from": "Muhammad Umer Khan", "to": "Alexandros Nanopoulos"}, {"arrowStrikethrough": false, "from": "Muhammad Umer Khan", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Lars Schmidt{-}Thieme", "to": "Alexandros Nanopoulos"}, {"arrowStrikethrough": false, "from": "Lars Schmidt{-}Thieme", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Alexandros Nanopoulos", "to": "Apostolos N. Papadopoulos"}, {"arrowStrikethrough": false, "from": "Alexandros Nanopoulos", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Alexandros Nanopoulos", "to": "Murat Karakaya"}, {"arrowStrikethrough": false, "from": "Alexandros Nanopoulos", "to": "G{\\\"{o}}khan Yavas"}, {"arrowStrikethrough": false, "from": "Alexandros Nanopoulos", "to": "{\\\"{O}}zg{\\\"{u}}r Ulusoy"}, {"arrowStrikethrough": false, "from": "Katerina Pechlivanidou", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Katerina Pechlivanidou", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Katerina Pechlivanidou", "to": "Kostas Katsalis"}, {"arrowStrikethrough": false, "from": "Katerina Pechlivanidou", "to": "Ioannis Igoumenos"}, {"arrowStrikethrough": false, "from": "Katerina Pechlivanidou", "to": "Thanasis Korakis"}, {"arrowStrikethrough": false, "from": "Kostas Katsalis", "to": "Ioannis Igoumenos"}, {"arrowStrikethrough": false, "from": "Kostas Katsalis", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Kostas Katsalis", "to": "Thanasis Korakis"}, {"arrowStrikethrough": false, "from": "Kostas Katsalis", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Ioannis Igoumenos", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Ioannis Igoumenos", "to": "Thanasis Korakis"}, {"arrowStrikethrough": false, "from": "Ioannis Igoumenos", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Thanasis Korakis", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Nikos Makris", "to": "Thanasis Korakis"}, {"arrowStrikethrough": false, "from": "Nikos Makris", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Nikos Makris", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Nikos Dimokas", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Nikos Dimokas", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Alfredo Cuzzocrea", "to": "Alexis Papadimitriou"}, {"arrowStrikethrough": false, "from": "Alfredo Cuzzocrea", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Alfredo Cuzzocrea", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Leonidas Akritidis", "to": "Panayiotis Bozanis"}, {"arrowStrikethrough": false, "from": "Donatos Stavropoulos", "to": "Giannis Kazdaridis"}, {"arrowStrikethrough": false, "from": "Donatos Stavropoulos", "to": "Thanasis Korakis"}, {"arrowStrikethrough": false, "from": "Donatos Stavropoulos", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Donatos Stavropoulos", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Giannis Kazdaridis", "to": "Thanasis Korakis"}, {"arrowStrikethrough": false, "from": "Giannis Kazdaridis", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Giannis Kazdaridis", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Vasilis Sourlas", "to": "Paris Flegkas"}, {"arrowStrikethrough": false, "from": "Vasilis Sourlas", "to": "Georgios S. Paschos"}, {"arrowStrikethrough": false, "from": "Vasilis Sourlas", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Vasilis Sourlas", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Paris Flegkas", "to": "Georgios S. Paschos"}, {"arrowStrikethrough": false, "from": "Paris Flegkas", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Paris Flegkas", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Georgios S. Paschos", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Georgios S. Paschos", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Bhaskar Prasad Rimal", "to": "Admela Jukan"}, {"arrowStrikethrough": false, "from": "Bhaskar Prasad Rimal", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Bhaskar Prasad Rimal", "to": "Yves Goeleven"}, {"arrowStrikethrough": false, "from": "Admela Jukan", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Admela Jukan", "to": "Yves Goeleven"}, {"arrowStrikethrough": false, "from": "George Pallis", "to": "S. Sivasubramanian"}, {"arrowStrikethrough": false, "from": "George Pallis", "to": "Athena Vakali"}, {"arrowStrikethrough": false, "from": "George Pallis", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "George Pallis", "to": "Konstantinos Stamos"}, {"arrowStrikethrough": false, "from": "George Pallis", "to": "Marios D. Dikaiakos"}, {"arrowStrikethrough": false, "from": "George Pallis", "to": "Nicholas Loulloudes"}, {"arrowStrikethrough": false, "from": "George Pallis", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "S. Sivasubramanian", "to": "Athena Vakali"}, {"arrowStrikethrough": false, "from": "Athena Vakali", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Athena Vakali", "to": "Konstantinos Stamos"}, {"arrowStrikethrough": false, "from": "Andreas Papadopoulos", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Konstantinos Stamos", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Marios D. Dikaiakos", "to": "Pankaj Mehra"}, {"arrowStrikethrough": false, "from": "Marios D. Dikaiakos", "to": "Athena Vakali"}, {"arrowStrikethrough": false, "from": "Marios D. Dikaiakos", "to": "Nicholas Loulloudes"}, {"arrowStrikethrough": false, "from": "Marios D. Dikaiakos", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Pankaj Mehra", "to": "George Pallis"}, {"arrowStrikethrough": false, "from": "Pankaj Mehra", "to": "Athena Vakali"}, {"arrowStrikethrough": false, "from": "Nicholas Loulloudes", "to": "Leandros Tassiulas"}, {"arrowStrikethrough": false, "from": "Ioannis Karydis", "to": "Alexandros Nanopoulos"}, {"arrowStrikethrough": false, "from": "Ioannis Karydis", "to": "Apostolos N. Papadopoulos"}, {"arrowStrikethrough": false, "from": "Ioannis Karydis", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Ioannis Karydis", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Apostolos N. Papadopoulos", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Apostolos N. Papadopoulos", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Maria Kontaki", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "Maria Kontaki", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Fotis Tsakiridis", "to": "Panayiotis Bozanis"}, {"arrowStrikethrough": false, "from": "Fotis Tsakiridis", "to": "Dimitrios Katsaros"}, {"arrowStrikethrough": false, "from": "G{\\\"{o}}khan Yavas", "to": "{\\\"{O}}zg{\\\"{u}}r Ulusoy"}, {"arrowStrikethrough": false, "from": "G{\\\"{o}}khan Yavas", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "{\\\"{O}}zg{\\\"{u}}r Ulusoy", "to": "Yannis Manolopoulos"}, {"arrowStrikethrough": false, "from": "Murat Karakaya", "to": "G{\\\"{o}}khan Yavas"}, {"arrowStrikethrough": false, "from": "Murat Karakaya", "to": "{\\\"{O}}zg{\\\"{u}}r Ulusoy"}, {"arrowStrikethrough": false, "from": "Murat Karakaya", "to": "Yannis Manolopoulos"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        },
+         arrowStrikethrough: true,
+        "arrows": {
+      to: {
+        enabled: true,
+        imageHeight: undefined,
+        imageWidth: undefined,
+        scaleFactor: 1,
+        src: undefined,
+        type: "arrow"
+      },
+      middle: {
+        enabled: false,
+        imageHeight: 32,
+        imageWidth: 32,
+        scaleFactor: 1,
+        src: "https://visjs.org/images/visjs_logo.png",
+        type: "image"
+      },
+      from: {
+        enabled: false,
+        imageHeight: undefined,
+        imageWidth: undefined,
+        scaleFactor: 1,
+        src: undefined,
+        type: "arrow"
+      }
+    }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": true,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
